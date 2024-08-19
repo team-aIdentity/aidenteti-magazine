@@ -64,7 +64,7 @@ const Navigation = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
 
   return (
-    <div className="flex w-full h-[80px] justify-between items-center border-4 px-4">
+    <div className="z-50 fixed top-0 flex w-full h-[80px] justify-between items-center px-4 bg-transparent transition-all duration-300 ease-in-out backdrop-blur-[20px] -webkit-backdrop-blur-[20px]">
       <div className="h-full flex items-center">
         {/* Logo */}
         <div
@@ -95,7 +95,7 @@ const Navigation = () => {
                 </Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[400px] ">
                   {libraryList.map((el) => (
                     <a
                       href={el.href}
@@ -116,7 +116,7 @@ const Navigation = () => {
                 </Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[400px] ">
                   {libraryList.map((el) => (
                     <a
                       href={el.href}
@@ -127,6 +127,15 @@ const Navigation = () => {
                   ))}
                 </ul>
               </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            {/* Develop */}
+            <NavigationMenuItem>
+              <Link to="/develop">
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Develop
+                </NavigationMenuLink>
+              </Link>
             </NavigationMenuItem>
 
             {/* Market */}
@@ -146,7 +155,7 @@ const Navigation = () => {
                 </Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[400px] ">
                   <a
                     href="/community/lounge"
                     className="hover:bg-accent font-500 py-2 px-4 rounded-md flex justify-center items-center w-max"
