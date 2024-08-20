@@ -46,21 +46,21 @@ const viewCardList: IViewCardList[] = [
 const ViewSection: React.FC<ViewSectionProps> = ({ title, href }) => {
   return (
     <>
-      <div className="h-[500px] flex flex-col justify-center items-center px-[10%]">
-        <div className="w-full h-full">
+      <div className="flex h-[500px] flex-col items-center justify-center px-[10%]">
+        <div className="h-full w-full">
           <div className="relative h-[30%]">
-            <span className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 text-3xl font-serif">
+            <span className="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 transform font-serif text-3xl">
               {title}
             </span>
             <Button
               variant="destructive"
-              className="bg-[#0B60B0] text-xs absolute top-[50%] right-0 transform -translate-y-1/2 hover:bg-[#40A2D8]"
+              className="absolute right-0 top-[50%] -translate-y-1/2 transform bg-[#0B60B0] text-xs hover:bg-[#40A2D8]"
             >
               <Link to={href}>VIEW ALL BLOG</Link>
             </Button>
           </div>
 
-          <div className="h-[70%] flex items-center justify-center gap-4">
+          <div className="flex h-[70%] items-center justify-center gap-4">
             {viewCardList.map((card) => (
               <ViewCard card={card} />
             ))}

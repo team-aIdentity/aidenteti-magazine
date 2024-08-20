@@ -7,9 +7,9 @@ interface ViewCardProps {
 const ViewCard: React.FC<ViewCardProps> = ({ card }) => {
   return (
     <>
-      <div className="w-[33.333333%] h-full rounded-xl overflow-hidden cursor-pointer shadow">
+      <div className="h-full w-[33.333333%] cursor-pointer overflow-hidden rounded-xl shadow">
         <div
-          className="w-full h-[60%] bg-gray-300"
+          className="h-[60%] w-full bg-gray-300"
           style={
             {
               // backgroundImage: "url()",
@@ -18,11 +18,11 @@ const ViewCard: React.FC<ViewCardProps> = ({ card }) => {
             }
           }
         ></div>
-        <div className="px-5 py-4 h-[40%] bg-white flex flex-col justify-between">
-          <div className="text-black font-300 h-[50px] overflow-hidden text-ellipsis whitespace-normal line-clamp-2">
+        <div className="flex h-[40%] flex-col justify-between bg-white px-5 py-4">
+          <div className="font-300 line-clamp-2 h-[50px] overflow-hidden text-ellipsis whitespace-normal text-black">
             {card.title}
           </div>
-          <div className="font-mono text-xs text-gray-400 h-[30%] flex items-center">
+          <div className="flex h-[30%] items-center font-mono text-xs text-gray-400">
             {card.writer} - {card.date} - {card.comments || "No"} Comments
           </div>
         </div>
