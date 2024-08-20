@@ -64,11 +64,11 @@ const Navigation = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
 
   return (
-    <div className="z-50 fixed top-0 flex w-full h-[80px] justify-between items-center px-4 bg-transparent transition-all duration-300 ease-in-out backdrop-blur-[20px] -webkit-backdrop-blur-[20px]">
-      <div className="h-full flex items-center">
+    <div className="-webkit-backdrop-blur-[20px] fixed top-0 z-50 flex h-[80px] w-full items-center justify-between bg-transparent px-4 backdrop-blur-[20px] transition-all duration-300 ease-in-out">
+      <div className="flex h-full items-center">
         {/* Logo */}
         <div
-          className="h-[80%] w-[120px] mr-2"
+          className="mr-2 h-[80%] w-[120px]"
           style={{
             backgroundImage: `url("/logo.png")`,
             backgroundSize: "cover",
@@ -95,11 +95,11 @@ const Navigation = () => {
                 </Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[400px] ">
+                <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[400px]">
                   {libraryList.map((el) => (
                     <a
                       href={el.href}
-                      className="hover:bg-accent font-500 py-2 px-4 rounded-md flex justify-center items-center w-max"
+                      className="font-500 flex w-max items-center justify-center rounded-md px-4 py-2 hover:bg-accent"
                     >
                       {el.title}
                     </a>
@@ -116,26 +116,17 @@ const Navigation = () => {
                 </Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[400px] ">
+                <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[400px]">
                   {libraryList.map((el) => (
                     <a
                       href={el.href}
-                      className="hover:bg-accent font-500 py-2 px-4 rounded-md flex justify-center items-center w-max"
+                      className="font-500 flex w-max items-center justify-center rounded-md px-4 py-2 hover:bg-accent"
                     >
                       {el.title}
                     </a>
                   ))}
                 </ul>
               </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            {/* Develop */}
-            <NavigationMenuItem>
-              <Link to="/develop">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Develop
-                </NavigationMenuLink>
-              </Link>
             </NavigationMenuItem>
 
             {/* Market */}
@@ -155,16 +146,16 @@ const Navigation = () => {
                 </Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[400px] ">
+                <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[400px]">
                   <a
                     href="/community/lounge"
-                    className="hover:bg-accent font-500 py-2 px-4 rounded-md flex justify-center items-center w-max"
+                    className="font-500 flex w-max items-center justify-center rounded-md px-4 py-2 hover:bg-accent"
                   >
                     lounge
                   </a>
                   <a
                     href="/community/expert"
-                    className="hover:bg-accent font-500 py-2 px-4 rounded-md flex justify-center items-center w-max"
+                    className="font-500 flex w-max items-center justify-center rounded-md px-4 py-2 hover:bg-accent"
                   >
                     expert
                   </a>
