@@ -34,7 +34,7 @@ const dummy = [
 const Gallery = () => {
   return (
     <>
-      <div className="h-auto w-full bg-gray-100 px-[10vw] py-[5vh]">
+      <div className="h-auto w-full px-[10vw] py-[5vh]">
         {/* top */}
         <div className="mb-8 flex items-center justify-between">
           <div className="h-full font-serif text-2xl">
@@ -56,8 +56,8 @@ const Gallery = () => {
 
         {/* middle */}
         <div className="mb-8 grid grid-cols-3 gap-4">
-          {dummy.map((card) => (
-            <GalleryCard card={card} />
+          {dummy.map((card, index) => (
+            <GalleryCard key={index} card={card} />
           ))}
         </div>
 

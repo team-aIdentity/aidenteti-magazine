@@ -20,8 +20,8 @@ const viewList: IViewList[] = [
 const MainViewAll = () => {
   return (
     <div className="py-[5%]">
-      {viewList.map((view) => (
-        <ViewSection title={view.title} href={view.href} />
+      {viewList.map((view, index) => (
+        <ViewSection key={index} title={view.title} href={view.href} />
       ))}
     </div>
   );

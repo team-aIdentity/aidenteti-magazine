@@ -96,8 +96,9 @@ const Navigation = () => {
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[400px]">
-                  {libraryList.map((el) => (
+                  {libraryList.map((el, index) => (
                     <a
+                      key={index}
                       href={el.href}
                       className="font-500 flex w-max items-center justify-center rounded-md px-4 py-2 hover:bg-accent"
                     >
@@ -110,23 +111,11 @@ const Navigation = () => {
 
             {/* Trend */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                <Link to="/trend">
-                  <NavigationMenuLink>Trend</NavigationMenuLink>
-                </Link>
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[400px]">
-                  {libraryList.map((el) => (
-                    <a
-                      href={el.href}
-                      className="font-500 flex w-max items-center justify-center rounded-md px-4 py-2 hover:bg-accent"
-                    >
-                      {el.title}
-                    </a>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
+              <Link to="/trend">
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Trend
+                </NavigationMenuLink>
+              </Link>
             </NavigationMenuItem>
 
             {/* Market */}
