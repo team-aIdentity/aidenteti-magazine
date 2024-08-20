@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import App from "../App";
 import MainPage from "@/pages/MainPage";
 import LoginPage from "@/pages/LoginPage";
 import LibraryPage from "@/pages/LibraryPage";
+import TrendPage from "@/pages/TrendPage";
 
 const router = createBrowserRouter([
   {
@@ -18,48 +18,10 @@ const router = createBrowserRouter([
     path: "/library",
     element: <LibraryPage />,
   },
-  // {
-  //     path: '/article',
-  //     element: <Article />
-  // },
-  // {
-  //     path: '/trend',
-  //     element: <Trend />,
-  //     children: [
-  //         {
-  //             path: ':id',
-  //             element: <TrendDetail />
-  //         }
-  //     ]
-  // },
-  // {
-  //     path: '/develop',
-  //     element: <Develop />,
-  //     children: [
-  //         {
-  //             path: ':id',
-  //             element: <DevelopDetail />
-  //         }
-  //     ]
-  // },
-  // {
-  //     path: '/market',
-  //     element: <Market />
-  // },
-  // {
-  //     path: '/community',
-  //     element: <Community />,
-  //     children: [
-  //         {
-  //             path: 'lounge',
-  //             element: <Lounge />
-  //         },
-  //         {
-  //             path: 'expert',
-  //             element: <Expert />
-  //         }
-  //     ]
-  // },
+  {
+    path: "/trend",
+    element: <TrendPage />,
+  },
 ]);
 
 export default router;
