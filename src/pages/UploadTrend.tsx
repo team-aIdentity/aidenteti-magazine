@@ -10,20 +10,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import React, { useEffect, useState } from "react";
 
-const dummy = [
-  {
-    url: "/example1.jpeg",
-  },
-  {
-    url: "/example2.jpeg",
-  },
-];
-
 const UploadTrend = () => {
   const [title, setTitle] = useState<string>("제목을 입력하세요.");
   const [detail, setDetail] = useState<string>("본문을 입력하세요.");
-  const [fileArr, setFileArr] = useState<File[] | null>();
-  const [previewArr, setPreviewArr] = useState<string[]>([]);
+  const [fileArr, setFileArr] = useState<File[]>([]);
+  const [previewArr, setPreviewArr] = useState<string[]>([""]);
 
   const handleFileArr = (fileList: FileList | null) => {
     if (!fileList) return;
@@ -31,8 +22,9 @@ const UploadTrend = () => {
       alert("이미지는 10장 이내로");
       return;
     }
-    const selectedFiles = Array.from(fileList || []);
-    setFileArr(selectedFiles);
+    const newFiles = Array.from(fileList || []);
+    const combinedFiles = [...fileArr, ...newFiles];
+    setFileArr(combinedFiles);
   };
 
   useEffect(() => {
@@ -53,20 +45,6 @@ const UploadTrend = () => {
       reader.readAsDataURL(file);
     });
   }, [fileArr]);
-
-  //   useEffect(() => {
-  //     if (!fileArr) return;
-  //     fileArr.map((file) => {
-  //       changeToBase64(file.name);
-  //     });
-  //   }, [fileArr]);
-
-  //   const changeToBase64 = (name: string) => {
-  //     let reader = new FileReader();
-  //     reader.onload = () => {
-
-  //     };
-  //   };
 
   return (
     <>
