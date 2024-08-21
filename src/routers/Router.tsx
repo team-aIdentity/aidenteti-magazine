@@ -17,6 +17,28 @@ const router = createBrowserRouter([
   {
     path: "/library",
     element: <LibraryPage />,
+    children: [
+      {
+        path: "article",
+        element: <LibraryPage />,
+        children: [
+          {
+            path: ":topic",
+            element: <LibraryPage />,
+          },
+        ],
+      },
+      {
+        path: "develop",
+        element: <LibraryPage />,
+        children: [
+          {
+            path: ":topic",
+            element: <LibraryPage />,
+          },
+        ],
+      },
+    ],
   },
   {
     path: "/trend",
