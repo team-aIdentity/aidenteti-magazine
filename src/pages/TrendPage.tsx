@@ -10,9 +10,13 @@ const TrendPage = () => {
     <>
       <Navigation />
 
-      <GallerySelect isGallery={isGallery} setIsGallery={setIsGallery} />
+      <GallerySelect
+        isGallery={isGallery}
+        setIsGallery={setIsGallery}
+        marginTop="80px"
+      />
 
-      {isGallery ? <Gallery /> : <></>}
+      <Gallery isGallery={isGallery} />
     </>
   );
 };

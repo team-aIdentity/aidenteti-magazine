@@ -25,7 +25,7 @@ const LibraryFilter = () => {
               <DifficultyLabel
                 label="Beginner"
                 bgColor="rgba(2,192,118,0.2)"
-                hoverColor="rgba(2,192,118,0.2)"
+                hoverColor="rgba(2,192,118,0.3)"
                 dotColor="rgba(2,192,118,1)"
               />
               <DifficultyLabel
@@ -44,8 +44,6 @@ const LibraryFilter = () => {
           </div>
         </div>
       </div>
-
-      <div className="w-full bg-gray-300 px-[10vw] py-[5vh]"></div>
     </>
   );
 };

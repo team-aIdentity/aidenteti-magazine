@@ -25,36 +25,38 @@ interface INavigationList {
   description: string;
 }
 
-// Library list
-const libraryList: INavigationList[] = [
+// Library list (best topic 3)
+const articleTopics: INavigationList[] = [
   {
-    title: "topic1",
-    href: "/library/topic1",
+    title: "blockchain",
+    href: "/library/article/blockchain",
     description: "",
   },
   {
-    title: "topic2",
-    href: "/library/topic2",
+    title: "defi",
+    href: "/library/article/defi",
     description: "",
   },
   {
-    title: "topic3",
-    href: "/library/topic3",
+    title: "wallet",
+    href: "/library/article/wallet",
+    description: "",
+  },
+];
+const developTopics: INavigationList[] = [
+  {
+    title: "blockchain",
+    href: "/library/develop/blockchain",
     description: "",
   },
   {
-    title: "topic4",
-    href: "/library/topic4",
+    title: "defi",
+    href: "/library/develop/defi",
     description: "",
   },
   {
-    title: "topic5",
-    href: "/library/topic5",
-    description: "",
-  },
-  {
-    title: "topic6",
-    href: "/library/topic6",
+    title: "wallet",
+    href: "/library/develop/wallet",
     description: "",
   },
 ];
@@ -90,17 +92,54 @@ const Navigation = () => {
             {/* Library */}
             <NavigationMenuItem>
               <NavigationMenuTrigger>
-                <Link to="/library">
-                  <NavigationMenuLink>Library</NavigationMenuLink>
-                </Link>
+                <Link to="/library/article">Library</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[400px]">
-                  {libraryList.map((el, index) => (
+                <ul className="grid gap-2 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <li className="row-span-3">
+                    <NavigationMenuLink asChild>
+                      <a
+                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none hover:bg-muted focus:shadow-md"
+                        href="/library/article"
+                      >
+                        <div className="mb-2 mt-4 text-lg font-medium">
+                          Article
+                        </div>
+                        <p className="text-sm leading-tight text-muted-foreground">
+                          비개발
+                        </p>
+                      </a>
+                    </NavigationMenuLink>
+                  </li>
+                  {articleTopics.map((el, index) => (
                     <a
                       key={index}
                       href={el.href}
-                      className="font-500 flex w-max items-center justify-center rounded-md px-4 py-2 hover:bg-accent"
+                      className="font-500 flex w-full items-center justify-start rounded-md px-4 py-2 hover:bg-muted"
+                    >
+                      {el.title}
+                    </a>
+                  ))}
+                  <li className="row-span-3">
+                    <NavigationMenuLink asChild>
+                      <a
+                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none hover:bg-muted focus:shadow-md"
+                        href="/library/develop"
+                      >
+                        <div className="mb-2 mt-4 text-lg font-medium">
+                          Develop
+                        </div>
+                        <p className="text-sm leading-tight text-muted-foreground">
+                          개발
+                        </p>
+                      </a>
+                    </NavigationMenuLink>
+                  </li>
+                  {developTopics.map((el, index) => (
+                    <a
+                      key={index}
+                      href={el.href}
+                      className="font-500 flex w-full items-center justify-start rounded-md px-4 py-2 hover:bg-muted"
                     >
                       {el.title}
                     </a>
@@ -130,24 +169,40 @@ const Navigation = () => {
             {/* Community */}
             <NavigationMenuItem>
               <NavigationMenuTrigger>
-                <Link to="/community/lounge">
-                  <NavigationMenuLink>Community</NavigationMenuLink>
-                </Link>
+                <Link to="/community/lounge">Community</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[400px]">
-                  <a
-                    href="/community/lounge"
-                    className="font-500 flex w-max items-center justify-center rounded-md px-4 py-2 hover:bg-accent"
-                  >
-                    lounge
-                  </a>
-                  <a
-                    href="/community/expert"
-                    className="font-500 flex w-max items-center justify-center rounded-md px-4 py-2 hover:bg-accent"
-                  >
-                    expert
-                  </a>
+                <ul className="grid gap-2 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[1fr_1fr]">
+                  <li className="row-span-3">
+                    <NavigationMenuLink asChild>
+                      <a
+                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none hover:bg-muted focus:shadow-md"
+                        href="/community/lounge"
+                      >
+                        <div className="mb-2 mt-4 text-lg font-medium">
+                          Lounge
+                        </div>
+                        <p className="text-sm leading-tight text-muted-foreground">
+                          전체
+                        </p>
+                      </a>
+                    </NavigationMenuLink>
+                  </li>
+                  <li className="row-span-3">
+                    <NavigationMenuLink asChild>
+                      <a
+                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none hover:bg-muted focus:shadow-md"
+                        href="/community/expert"
+                      >
+                        <div className="mb-2 mt-4 text-lg font-medium">
+                          Expert
+                        </div>
+                        <p className="text-sm leading-tight text-muted-foreground">
+                          전문가
+                        </p>
+                      </a>
+                    </NavigationMenuLink>
+                  </li>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>

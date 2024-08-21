@@ -10,7 +10,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ card }) => {
   return (
     <>
       <Link to={""}>
-        <div className="duration-250 relative block overflow-hidden rounded-lg bg-white shadow-[0_0_1px_rgba(20,21,26,0.1),0_7px_14px_rgba(71,77,87,0.08),0_3px_6px_rgba(20,21,26,0.08)] transition-shadow ease-in hover:shadow-[0_0_1px_rgba(20,21,26,0.1),0_16px_32px_rgba(71,77,87,0.16),0_8px_16px_rgba(20,21,26,0.16)]">
+        <div className="duration-250 relative block overflow-hidden rounded-2xl bg-white shadow-[0_0_1px_rgba(20,21,26,0.1),0_7px_14px_rgba(71,77,87,0.08),0_3px_6px_rgba(20,21,26,0.08)] transition-shadow ease-in hover:shadow-[0_0_1px_rgba(20,21,26,0.1),0_16px_32px_rgba(71,77,87,0.16),0_8px_16px_rgba(20,21,26,0.16)]">
           <div className="z-5 font-500 absolute left-5 top-5 flex gap-2 font-sans text-sm text-white">
             {card.topic.map((topic: string, index: number) => (
               <div
@@ -30,7 +30,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ card }) => {
                 backgroundSize: "cover",
               }}
             ></div>
-            <div className="font-600 mb-5 min-h-14 w-full px-5 text-xl">
+            <div className="font-600 mb-5 line-clamp-2 min-h-14 w-full overflow-hidden text-ellipsis px-5 text-xl">
               {card.title}
             </div>
             <div className="flex items-center px-5 pb-5">
