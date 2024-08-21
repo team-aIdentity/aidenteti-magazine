@@ -63,7 +63,7 @@ const developTopics: INavigationList[] = [
 
 const Navigation = () => {
   // 로그인 여부 (jwt 사용?)
-  const [isLogin, setIsLogin] = useState<boolean>(false);
+  const [isLogin, setIsLogin] = useState<boolean>(true);
 
   return (
     <div className="-webkit-backdrop-blur-[20px] fixed top-0 z-50 flex h-[80px] w-full items-center justify-between bg-transparent px-4 backdrop-blur-[20px] transition-all duration-300 ease-in-out">
@@ -213,16 +213,24 @@ const Navigation = () => {
       <div className="flex items-center gap-4">
         {/* login / signup */}
         {isLogin ? (
-          <HoverCard>
-            <HoverCardTrigger>
-              <Link to="/mypage">
-                <Avatar>
-                  <AvatarImage src="/user_default.png" />
-                </Avatar>
-              </Link>
-            </HoverCardTrigger>
-            <HoverCardContent>user 정보</HoverCardContent>
-          </HoverCard>
+          <>
+            <Button
+              variant="default"
+              className="bg-[#ffba26] hover:bg-[#FEC854]"
+            >
+              <Link to="/upload">Upload</Link>
+            </Button>
+            <HoverCard>
+              <HoverCardTrigger>
+                <Link to="/mypage">
+                  <Avatar>
+                    <AvatarImage src="/user_default.png" />
+                  </Avatar>
+                </Link>
+              </HoverCardTrigger>
+              <HoverCardContent>user 정보</HoverCardContent>
+            </HoverCard>
+          </>
         ) : (
           <>
             <Button variant="outline">

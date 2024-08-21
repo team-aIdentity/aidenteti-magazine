@@ -54,7 +54,7 @@ const ViewSection: React.FC<ViewSectionProps> = ({ title, href }) => {
             </span>
             <Button
               variant="destructive"
-              className="absolute right-0 top-[50%] -translate-y-1/2 transform bg-[#0B60B0] text-xs hover:bg-[#40A2D8]"
+              className="absolute right-0 top-[50%] -translate-y-1/2 transform bg-[#1b97da] text-xs hover:bg-[#40A2D8]"
             >
               <Link to={href}>VIEW ALL BLOG</Link>
             </Button>
