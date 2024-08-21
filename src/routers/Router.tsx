@@ -4,6 +4,7 @@ import MainPage from "@/pages/MainPage";
 import LoginPage from "@/pages/LoginPage";
 import LibraryPage from "@/pages/LibraryPage";
 import TrendPage from "@/pages/TrendPage";
+import UploadPage from "@/pages/UploadPage";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/trend",
     element: <TrendPage />,
+  },
+  {
+    path: "/upload",
+    element: <UploadPage />,
   },
 ]);
 
